@@ -40,6 +40,12 @@
     <button type="submit" class="btn btn-primary">
         Click
     </button>
+
+    <SampleList Items="mydataList" Context="item">
+        <ItemTemplate>
+            <li class="list-group-item">@item.Name (@item.Mail). </li>
+        </ItemTemplate>
+    </SampleList>
 </EditForm>
 
 @code {
@@ -64,5 +70,12 @@
     {
         message = mydata.ToString();
     }
+
+    private List<MyData> mydataList = new()
+{
+        new MyData("Taro", "hoge", "taro@yamada"),
+        new MyData("Hanako", "foo", "hanako@flower"),
+        new MyData("Sachiko", "bar", "sachiko@happy")
+};
 }
 
