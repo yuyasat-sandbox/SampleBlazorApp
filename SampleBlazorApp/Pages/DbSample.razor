@@ -1,0 +1,44 @@
+﻿@page "/DbSample"
+@using Microsoft.EntityFrameworkCore
+@using SampleBlazorApp.Models
+@inject SampleBlazorAppContext _context
+
+<h1>DbSample</h1>
+
+@if (People != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mail</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in People)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Mail</td>
+                    <td>@item.Age</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-primary">please wait...</div>
+}
+
+@code {
+    public IList<Person>? People { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        People = await _context.Person.ToListAsync<Person>();
+    }
+
+}
+
