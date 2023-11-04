@@ -1,5 +1,4 @@
-﻿using System;
-namespace SampleBlazorApp.Models
+﻿namespace SampleBlazorApp.Models
 {
     public class Person
     {

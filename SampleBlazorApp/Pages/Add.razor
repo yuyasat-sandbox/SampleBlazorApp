@@ -9,15 +9,17 @@
 <EditForm Model="@person" OnSubmit="OnAdd">
     <div class="text-danger">@errorMessage</div>
     <div class="form-group">
-        <label asp-for="Person.Name" class="control-label"></label>
+        <label asp-for="Person.Name" class="control-label">
+            名前
+        </label>
         <input asp-for="Person.Name" class="form-control" @bind-value="@person.Name" />
     </div>
     <div class="form-group">
-        <label asp-for="Person.Mail" class="control-label"></label>
+        <label asp-for="Person.Mail" class="control-label">メールアドレス</label>
         <input asp-for="Person.Mail" class="form-control" @bind-value="@person.Mail" />
     </div>
     <div class="form-group">
-        <label asp-for="Person.Age" class="control-label"></label>
+        <label asp-for="Person.Age" class="control-label">年齢</label>
         <input asp-for="Person.Age" class="form-control" @bind-value="@person.Age" />
     </div>
     <div class="form-group">
